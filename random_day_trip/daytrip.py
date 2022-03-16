@@ -40,7 +40,6 @@ def choose_destination(list_of_destinations):
     user_input = input ("would you like to go to this destinantion?")
     lowered_input = user_input.lower()
     if user_input == ("yes"):
-        users_choices.append(destination)
         print ("Great! That is an exciting place to travel!")
     while user_input == ("no"):
         print ("Understood, lets look at a different location.")
@@ -48,6 +47,7 @@ def choose_destination(list_of_destinations):
         print (destination)   
         user_input = input("would you like to go to this destinantion?")
     if user_input == ("yes"):
+        users_choices.append(destination)
         print ("You aren't going to want to leave!")
     return destination
 choose_destination(destinations)
@@ -64,7 +64,6 @@ def pick_place_to_eat(list_of_places_to_eat):
     user_input = input ("Does this Restaraunt sound good?")
     lowered_input = user_input.lower()
     if user_input == ("yes"):
-        users_choices.append(place_to_eat)
         print ("Great! It was my favorite restaraunt at your chosen location!!")
     while user_input == ("no"):
         print ("Okiedokie, let's find something a little more Tasty for you!")
@@ -72,6 +71,7 @@ def pick_place_to_eat(list_of_places_to_eat):
         print (place_to_eat)
         user_input = input ("Does this Restaraunt sound like a tastier option?")
     if user_input == ("yes"):
+        users_choices.append(place_to_eat)
         print ("You're going to love their food!!")  
     return place_to_eat      
 pick_place_to_eat(places_to_eat)
@@ -88,7 +88,6 @@ def choose_your_mode_of_travel(list_of_transportation_options):
     user_input= input("Is this how you would like to travel?")
     lowered_input = user_input.lower()
     if user_input == ("yes"):
-        users_choices.append(mode_of_travel)
         print ("That is a fun way to travel!!")
     while user_input == ("no"):
         print ("No worrries, we can also get you there this way!")
@@ -96,6 +95,7 @@ def choose_your_mode_of_travel(list_of_transportation_options):
         print (mode_of_travel)
         user_input = input ("Does this sound like a better way to travel?")
     if user_input == ("yes"):
+        users_choices.append(mode_of_travel)
         print ("Awesomesauce! You are almost on vacation!")
         return mode_of_travel
 choose_your_mode_of_travel(transportation_options)
@@ -112,7 +112,6 @@ def pick_type_of_entertainment(list_of_entertainment_options):
     user_input = input("Does this sound like something fun to do?")
     lowered_input = user_input.lower()
     if user_input == ("yes"):
-        users_choices.append(type_of_entertainment)
         print ("That's a great choice of activities!")
     while user_input == ("no"):
         print ("Didn't sound like fun, huh? That's OK, how about this for some entertainment?")
@@ -120,6 +119,7 @@ def pick_type_of_entertainment(list_of_entertainment_options):
         print (type_of_entertainment)
         user_input = input ("Would you like to do this instead?")
     if user_input == ("yes"):
+        users_choices.append(type_of_entertainment)
         print ("Superb! I'm so glad we found something you want to do on your 'Daycation', HaHa!")
     return type_of_entertainment 
 pick_type_of_entertainment(entertainment_options)
@@ -135,11 +135,13 @@ def confirmation():
     ready_to_go= "Well what are you waiting for? Get going!"
     changed_your_mind= "Let's plan a different 'Daycation' for you!"
     print (users_choices)
-    user_input= ("Are you excited about your 'Daycation', or do you want to make any changes?")
+    user_input= input("Are you happy with your Daycation?")
     if user_input == "yes":
         print (ready_to_go)
+        
     elif user_input == "no":
         print (changed_your_mind)
+        welcome()
 confirmation()
 
 
